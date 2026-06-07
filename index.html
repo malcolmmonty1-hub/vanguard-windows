@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanguard Window Cleaning | Lincoln's #1 Window Cleaners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c2340;
+      --navy2:   #0f2d52;
+      --blue:    #0284c7;
+      --blue-lt: #38bdf8;
+      --blue-bg: #f0f8ff;
+      --blue-bg2:#e1f2fc;
+      --white:   #ffffff;
+      --text:    #1a2e44;
+      --muted:   #5a7a96;
+      --border:  #c8e3f5;
+      --gold:    #f59e0b;
+      --radius:  14px;
+      --glow:    rgba(2, 132, 199, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(12, 35, 64, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--blue-lt); }
+
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+
+    .nav-phone {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-phone:hover { color: var(--blue-lt); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.6); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); transform: translateY(-1px); }
+    .btn-outline-blue { background: transparent; color: var(--blue); border: 1.5px solid var(--blue); }
+    .btn-outline-blue:hover { background: var(--glow); transform: translateY(-1px); }
+    .btn-lg { padding: 16px 36px; font-size: 1rem; border-radius: 10px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 5% 100px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to right, rgba(12,35,64,0.88) 0%, rgba(12,35,64,0.55) 60%, rgba(12,35,64,0.2) 100%),
+        url('Grey house.jpeg') center/cover no-repeat;
+    }
+
+    .hero-inner { max-width: 680px; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.18);
+      border: 1px solid rgba(56,189,248,0.4);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue-lt);
+      margin-bottom: 24px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--blue-lt);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+      color: var(--white);
+    }
+    h1 .highlight { color: var(--blue-lt); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 540px;
+      margin-bottom: 38px;
+      line-height: 1.75;
+    }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    .hero-trust {
+      margin-top: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+    .hero-trust-item .ck { color: var(--blue-lt); font-size: 1rem; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--navy);
+      padding: 32px 5%;
+    }
+    .trust-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .trust-icon {
+      width: 46px; height: 46px;
+      background: rgba(56,189,248,0.12);
+      border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .trust-label { font-size: 0.9rem; font-weight: 700; color: var(--white); line-height: 1.3; }
+    .trust-sub { font-size: 0.77rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 96px 5%; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 52px;
+    }
+
+    /* ── SERVICES ── */
+    .services-section { background: var(--blue-bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 2px 16px rgba(2,132,199,0.06);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(2,132,199,0.14);
+      border-color: var(--blue-lt);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: var(--blue-bg2);
+    }
+
+    .service-body { padding: 28px 26px 30px; }
+
+    .service-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .service-icon-wrap {
+      width: 42px; height: 42px;
+      background: var(--blue-bg2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .service-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .service-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── WHY US ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .why-list { display: flex; flex-direction: column; gap: 28px; }
+
+    .why-item { display: flex; gap: 18px; }
+
+    .why-num {
+      width: 40px; height: 40px;
+      background: var(--blue-bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+    .why-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+    .why-content p {
+      font-size: 0.91rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .why-photo {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(2,132,199,0.15);
+      display: block;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--navy);
+      padding: 56px 5%;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--blue-lt);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--blue-bg); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(2,132,199,0.06);
+      transition: all 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(2,132,199,0.12);
+      border-color: var(--blue-lt);
+    }
+
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 16px; letter-spacing: 2px; }
+
+    .testimonial-text {
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+    .author-avatar {
+      width: 42px; height: 42px;
+      background: var(--blue-bg2);
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .author-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+    .author-type { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background:
+        linear-gradient(rgba(12,35,64,0.82), rgba(12,35,64,0.82)),
+        url('Vanguard Home.PNG') center/cover no-repeat;
+      padding: 100px 5%;
+      text-align: center;
+    }
+    .cta-band .section-tag { color: var(--blue-lt); }
+    .cta-band h2 { color: var(--white); margin-bottom: 14px; }
+    .cta-band p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto; margin-right: auto;
+      line-height: 1.7;
+    }
+    .cta-band .hero-ctas { justify-content: center; }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--blue-bg); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info .section-tag { margin-bottom: 10px; }
+    .contact-info h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .contact-info > p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .contact-detail { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(2,132,199,0.08);
+    }
+    .contact-detail-label { font-size: 0.74rem; color: var(--muted); margin-bottom: 2px; font-weight: 500; }
+    .contact-detail-text a,
+    .contact-detail-text span {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-detail-text a:hover { color: var(--blue); }
+
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 24px rgba(2,132,199,0.08);
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 7px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: var(--blue-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 15px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    input::placeholder, textarea::placeholder { color: #9ab8d0; }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(2,132,199,0.1);
+      background: var(--white);
+    }
+    textarea { resize: vertical; min-height: 110px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-submit { width: 100%; margin-top: 6px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 48px 5%;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo { font-size: 1rem; font-weight: 800; color: var(--white); }
+    .footer-logo span { color: var(--blue-lt); }
+
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--blue-lt); }
+
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; max-width: 520px; }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .why-photo { height: 320px; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 520px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 4%; }
+      .nav-phone { display: none; }
+      section { padding: 70px 4%; }
+      .hero { padding: 120px 4% 80px; }
+      .trust-bar { padding: 28px 4%; }
+      .trust-bar-inner { grid-template-columns: 1fr; gap: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .contact-form { padding: 28px 22px; }
+      .stats-strip { padding: 48px 4%; }
+    }
+
+    /* ── PRESS / IN THE NEWS ── */
+    .press-section { background: var(--white); }
+
+    .article-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 52px;
+      box-shadow: 0 4px 32px rgba(2,132,199,0.08);
+      max-width: 1100px;
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .article-content { flex: 1; min-width: 0; }
+    .article-gabe-img {
+      width: 280px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      object-fit: cover;
+      align-self: stretch;
+      max-height: 480px;
+    }
+    @media (max-width: 768px) {
+      .article-card { flex-direction: column; }
+      .article-gabe-img { width: 100%; max-height: 300px; }
+    }
+
+    .article-outlet {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .outlet-badge {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .article-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .article-headline {
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      margin-bottom: 28px;
+    }
+
+    .article-body p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      background: var(--blue-bg);
+      padding: 20px 28px;
+      margin: 28px 0;
+      border-radius: 0 10px 10px 0;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--navy);
+      font-weight: 600;
+      line-height: 1.65;
+    }
+
+    .article-read-more { margin-top: 32px; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fu  { animation: fadeUp 0.6s ease both; }
+    .fu2 { animation-delay: 0.1s; }
+    .fu3 { animation-delay: 0.2s; }
+    .fu4 { animation-delay: 0.32s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="logo.jpeg" alt="Vanguard logo" style="height:38px;width:auto;vertical-align:middle;margin-right:10px;border-radius:6px;" />Vanguard <span>Window Cleaning</span></div>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:4022820800">(402) 282-0800</a>
+      <a class="nav-phone" href="#press">In the News</a>
+      <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge fu">Lincoln's #1 Window Cleaners</div>
+      <h1 class="fu fu2">
+        Crystal Clear.<br />
+        <span class="highlight">Every Single Pane.</span>
+      </h1>
+      <p class="hero-sub fu fu3">
+        Vanguard Window Cleaning serves homes and businesses across Lincoln with results you can actually see. On time, every time — or we make it right.
+      </p>
+      <div class="hero-ctas fu fu4">
+        <a class="btn btn-primary btn-lg" href="tel:4022820800">Call (402) 282-0800</a>
+        <a class="btn btn-outline btn-lg" href="#contact">Get a Free Quote</a>
+      </div>
+      <div class="hero-trust fu fu4">
+        <div class="hero-trust-item"><span class="ck">✓</span> Licensed &amp; Insured</div>
+        <div class="hero-trust-item"><span class="ck">✓</span> 100% Satisfaction Guaranteed</div>
+        <div class="hero-trust-item"><span class="ck">✓</span> Award-Winning</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <div>
+          <div class="trust-label">Licensed &amp; Insured</div>
+          <div class="trust-sub">Every job fully covered</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⭐</div>
+        <div>
+          <div class="trust-label">5-Star Rated</div>
+          <div class="trust-sub">Top-reviewed in Lincoln</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✅</div>
+        <div>
+          <div class="trust-label">Satisfaction Guaranteed</div>
+          <div class="trust-sub">Not perfect? We come back.</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏆</div>
+        <div>
+          <div class="trust-label">Award-Winning</div>
+          <div class="trust-sub">Raising the standard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div class="section-tag">What We Do</div>
+      <h2>Services Built Around Your Property</h2>
+      <p class="section-desc">Homes, storefronts, offices, facilities — we show up on time, do the job right, and leave without a trace.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <img
+            class="service-img"
+            src="window 2.jpg"
+            alt="Residential home with clean windows"
+            loading="lazy"
+          />
+          <div class="service-body">
+            <div class="service-icon-row">
+              <div class="service-icon-wrap">🏠</div>
+              <div class="service-title">Residential</div>
+            </div>
+            <p class="service-desc">Your home deserves more than streaks and missed edges. We clean every pane inside and out — frames, screens, and sills included. Scheduling that fits your life.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img
+            class="service-img"
+            src="window3.jpg"
+            alt="Modern small business with large windows"
+            loading="lazy"
+          />
+          <div class="service-body">
+            <div class="service-icon-row">
+              <div class="service-icon-wrap">🏢</div>
+              <div class="service-title">Commercial</div>
+            </div>
+            <p class="service-desc">First impressions happen at the window. We keep your office, storefront, or facility spotless — professional service that never disrupts your operation.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img
+            class="service-img"
+            src="house clean.jpg"
+            alt="Clean bright windows recurring service"
+            loading="lazy"
+          />
+          <div class="service-body">
+            <div class="service-icon-row">
+              <div class="service-icon-wrap">🔄</div>
+              <div class="service-title">Recurring Plans</div>
+            </div>
+            <p class="service-desc">The best-looking properties stay that way because of regular service. Set a schedule once — monthly, quarterly, or seasonal — and never think about it again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Average Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Satisfaction Guaranteed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">#1</div>
+        <div class="stat-label">Window Cleaner in Lincoln</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Missed Appointments</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div>
+          <div class="section-tag">Why Vanguard</div>
+          <h2>Raising the Standard.</h2>
+          <p class="section-desc">Most window cleaners show up late, miss spots, and disappear. We built Vanguard on the opposite of that.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-num">01</div>
+              <div class="why-content">
+                <h3>We Show Up When We Say We Will</h3>
+                <p>No waiting around. No last-minute reschedules. You get a time window and we honor it — every single job, every single time.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">02</div>
+              <div class="why-content">
+                <h3>Fully Licensed &amp; Insured</h3>
+                <p>Every job is fully covered. No liability on your end. No shortcuts on ours. That's the Vanguard standard.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">03</div>
+              <div class="why-content">
+                <h3>100% Satisfaction or We Come Back</h3>
+                <p>If anything isn't right, we return and fix it. No arguing. No runaround. Just clean windows — guaranteed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            class="why-photo"
+            src="window.jpg"
+            alt="Professional window cleaning service"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="reviews">
+    <div class="section-inner">
+      <div class="section-tag">Real Reviews</div>
+      <h2>What Lincoln Customers Are Saying</h2>
+      <p class="section-desc">Don't take our word for it. Here's what our customers say after every job.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Great communication, on-time arrival, and high-quality work from start to finish. Exactly what you want from a service company."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RC</div>
+            <div>
+              <div class="author-name">Recent Customer</div>
+              <div class="author-type">Lincoln, NE</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The team was friendly, efficient, and respectful of our property. You can tell they actually care about the work they do."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NC</div>
+            <div>
+              <div class="author-name">Neighborhood Client</div>
+              <div class="author-type">Lincoln, NE</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Easy scheduling and excellent results. Our windows have never looked this good. We'll be using them again — no question."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">HR</div>
+            <div>
+              <div class="author-name">Homeowner Review</div>
+              <div class="author-type">Lincoln, NE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN THE NEWS -->
+  <section class="press-section" id="press">
+    <div class="section-inner">
+      <div class="section-tag">In the News</div>
+      <h2>Lincoln's Own Making Headlines</h2>
+      <p class="section-desc">Vanguard Window Cleaning is getting recognized — and not just for spotless windows.</p>
+
+      <div class="article-card">
+        <div class="article-content">
+          <div class="article-outlet">
+            <span class="outlet-badge">1011 NOW</span>
+            <span class="article-meta">May 8, 2026 &middot; By Darsha Dodge</span>
+          </div>
+          <h3 class="article-headline">For Lincoln Teen Gabe Johnson, Success Is Looking Crystal Clear</h3>
+          <div class="article-body">
+            <p>Gabe Johnson, a 17-year-old Lincoln resident, established Vanguard Window Cleaning as a full-time enterprise before completing high school early. He operates the business with a demanding schedule, working up to 11 hours daily, seven days weekly.</p>
+
+            <blockquote>"Don't wonder if you could do it. I think all it takes is just acting on it."</blockquote>
+
+            <p>Johnson launched the venture three years ago using minimal equipment — just a mop and squeegee. Today, his operation includes a fully equipped truck and multiple employees serving hundreds of clients across Lincoln.</p>
+
+            <p>Among his notable clientele is former Nebraska football coach Tom Osborne. Johnson recalled the unexpected nature of working with such a prominent figure: "I hopped out of the shower soaking wet and I called him back" when Osborne reached out.</p>
+
+            <p>The young entrepreneur credits parental influence for developing his work ethic. He emphasized his philosophy on perseverance: "You're going to have the bads, you're going to have the falls, but you just got to keep going through them."</p>
+
+            <p>He reflects on resilience and character: "The person you are is defined by what you choose to do when you do fall down."</p>
+          </div>
+          <div class="article-read-more">
+            <a href="https://www.1011now.com/2026/05/08/lincoln-teen-gabe-johnson-success-is-looking-crystal-clear/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-blue">Read Full Article &rarr;</a>
+          </div>
+        </div>
+        <img src="Gabe.jpg" alt="Gabe Johnson" class="article-gabe-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="section-tag">Ready to Get Started?</div>
+    <h2>Your Cleanest Windows Start With One Call</h2>
+    <p>Serving residential and commercial properties across Lincoln. Free quote — no obligation, no runaround.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary btn-lg" href="tel:4022820800">Call (402) 282-0800</a>
+      <a class="btn btn-outline btn-lg" href="#contact">Request a Quote Online</a>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-tag">Get In Touch</div>
+          <h3>Request Your Free Quote</h3>
+          <p>Reach out and we'll get back to you fast. No spam, no pressure — just a straight answer on what it'll cost.</p>
+
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <a href="tel:4022820800">(402) 282-0800</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <a href="mailto:Info@vanguardwindowcleaning.com">Info@vanguardwindowcleaning.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-detail-label">Service Area</div>
+              <span>Lincoln, Nebraska</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="(402) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service">
+                <option value="">Select a service...</option>
+                <option>Residential Window Cleaning</option>
+                <option>Commercial Window Cleaning</option>
+                <option>Recurring Maintenance Plan</option>
+                <option>Not sure — help me decide</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Anything else?</label>
+              <textarea id="message" placeholder="Number of windows, property type, access notes..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg form-submit">Send My Quote Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Vanguard <span>Window Cleaning</span></div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#press">In the News</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 Vanguard Window Cleaning · Lincoln, NE</div>
+    </div>
+  </footer>
+
+</body>
+</html>
